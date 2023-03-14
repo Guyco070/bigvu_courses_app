@@ -50,9 +50,6 @@
 
   /* Grid view */
   .priview_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(386.26px, 0fr));
-    grid-gap: 16.61px;
     margin-top: 17px;
   }
 }

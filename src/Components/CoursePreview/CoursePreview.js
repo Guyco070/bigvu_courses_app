@@ -21,6 +21,8 @@ const colors = {
 function CoursePreview({course, index, isCompleted}) {
   const navigate = useNavigate();
 
+  const screenWidth = window.screen.availWidth;
+
   const color = colors[index % Object.keys(colors).length] // choose color by index
   const style = {
     background: color[0],
@@ -29,11 +31,12 @@ function CoursePreview({course, index, isCompleted}) {
     backgroundClip: 'text',
   }
 
+  const navigateToSpecificCourse = () => navigate('/course',  {state: course});
   return (
     <div className="preview_item">
         <div className='course_preview_title' style={style}>{course.headline}</div>
 
-        <div className='preview_box_item'>
+        <div className='preview_box_item' onClick={screenWidth < 550 ? navigateToSpecificCourse : null}>
           <div className="course_preview_box_header">
             <VideoAmountBox amount={course.chapters.length}/>
             { isCompleted && <div className='complited_container'>
@@ -43,7 +46,7 @@ function CoursePreview({course, index, isCompleted}) {
           </div>
           <div className="preview_bottom_container">
             <img className="preview_side_image" src={color[1]} alt='sideImage'/>
-            <div  className="preview_button" onClick={() => navigate('/course',  {state: course})}>
+            <div  className="preview_button" onClick={navigateToSpecificCourse}>
               <div className="preview_button_elipse"/>
               <img className="button_arrow" src={buttonArrow} alt='button_arrow'/>
             </div>
