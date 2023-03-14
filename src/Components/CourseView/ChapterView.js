@@ -1,5 +1,5 @@
-import play_icon from '../../Assets/icons/play_icon.svg';
-import check_icon from '../../Assets/icons/check_icon.svg';
+import play_icon from '../../assets/icons/play_icon.svg';
+import check_icon from '../../assets/icons/check_icon.svg';
 
 function ChapterView({number, title, duration, isNowWatching, setNowWatching, isWatched}) {
 

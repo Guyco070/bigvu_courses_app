@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import getAllCourses from '../ApiServices';
-import Course from '../Components/CoursePreview/CoursePreview';
-import LoadingSpinner from '../Components/LoadingSpinner';
+import CoursePreview from '../components/CoursePreview/CoursePreview';
+import LoadingSpinner from '../components/LoadingSpinner';
+// import Course from './Course';
+// import Course from './components/../../CoursePreview/CoursePreview';
+// import LoadingSpinner from './components/LoadingSpinner';
 
 function Courses() {
   const [courses, setCurses] = useState({
@@ -47,7 +50,7 @@ function Courses() {
 
   if(courses.data){
     content = (<ul className='priview_grid'>
-        {courses.data.map((course, i) => <Course course={course} key={course.id} index={i} isCompleted={isCompleted[course.id]}/>)}
+        {courses.data.map((course, i) => <CoursePreview course={course} key={course.id} index={i} isCompleted={isCompleted[course.id]}/>)}
       </ul>);
   }
 

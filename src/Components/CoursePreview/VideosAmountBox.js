@@ -1,4 +1,4 @@
-import video from '../../Assets/icons/video_icon.svg';
+import video from '../../assets/icons/video_icon.svg';
 function VideoAmountBox({amount}) {
     return (
       <div className="videos_amount_box">

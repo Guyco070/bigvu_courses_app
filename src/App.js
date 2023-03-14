@@ -1,12 +1,12 @@
 import './App.css';
-import Courses from './Views/Courses';
 import {
   BrowserRouter as Router,
   Route,
   // Navigate,
   Routes
 } from 'react-router-dom'
-import Course from './Views/Course';
+import Courses from './views/Courses';
+import Course from './views/Course';
 
 
 function App() {

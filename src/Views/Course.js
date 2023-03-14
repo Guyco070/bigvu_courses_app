@@ -1,9 +1,9 @@
-import medal_icon from '../Assets/icons/medal_icon.svg';
+import medal_icon from '../assets/icons/medal_icon.svg';
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import VideoPlayerView from '../Components/CourseView/VideoPlayerView';
-import LoadingSpinner from '../Components/LoadingSpinner';
-import ChapterView from '../Components/CourseView/ChapterView';
+import VideoPlayerView from '../components/CourseView/VideoPlayerView';
+import LoadingSpinner from '../components/LoadingSpinner';
+import ChapterView from '../components/CourseView/ChapterView';
 
 function Course() {
     const location = useLocation();
@@ -91,7 +91,7 @@ function Course() {
                 <div className='chapters_container'>
                     {
                     course.chapters.map((chapter, i) => 
-                         <ChapterView 
+                         <ChapterView
                             key = {chapter.id} 
                             number = {i + 1} 
                             title = {chapter.title} 

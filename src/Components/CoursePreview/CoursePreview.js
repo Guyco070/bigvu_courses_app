@@ -1,13 +1,13 @@
 import SummaryGrid from "./SummeryGrid";
 import VideoAmountBox from "./VideosAmountBox";
-import buttonArrow from '../../Assets/icons/button_arrow.svg';
-import sideImage1 from '../../Assets/icons/preview_side_image1.svg';
-import sideImage2 from '../../Assets/icons/preview_side_image2.svg';
-import sideImage3 from '../../Assets/icons/preview_side_image3.svg';
-import sideImage4 from '../../Assets/icons/preview_side_image4.svg';
-import sideImage5 from '../../Assets/icons/preview_side_image5.svg';
+import buttonArrow from '../../assets/icons/button_arrow.svg';
+import sideImage1 from '../../assets/icons/preview_side_image1.svg';
+import sideImage2 from '../../assets/icons/preview_side_image2.svg';
+import sideImage3 from '../../assets/icons/preview_side_image3.svg';
+import sideImage4 from '../../assets/icons/preview_side_image4.svg';
+import sideImage5 from '../../assets/icons/preview_side_image5.svg';
 import { useNavigate } from "react-router-dom";
-import medal_icon from '../../Assets/icons/medal_icon.svg';
+import medal_icon from '../../assets/icons/medal_icon.svg';
 
 const colors = {
   0: ['linear-gradient(270deg, #28B3F7 0.65%, #506AFF 99.35%)', sideImage1],
