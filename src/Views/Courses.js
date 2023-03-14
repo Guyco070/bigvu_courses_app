@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import getAllCourses from '../ApiServices';
-import CoursePreview from '../components/CoursePreview/CoursePreview';
-import LoadingSpinner from '../components/LoadingSpinner';
-// import Course from './Course';
-// import Course from './components/../../CoursePreview/CoursePreview';
-// import LoadingSpinner from './components/LoadingSpinner';
+import CoursePreview from '../components/coursePreview/CoursePreview';
+import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner';
+import './courses.css';
 
 function Courses() {
   const [courses, setCurses] = useState({
@@ -55,7 +53,7 @@ function Courses() {
   }
 
   return (
-    <div>
+    <div className='courses_page'>
       <div className='courses_page_title'>BIGVU 101 Crash Course</div>
       <div className='courses_page_sub_title'>
         Zero editing experience to pro — your journey starts here.<br/>

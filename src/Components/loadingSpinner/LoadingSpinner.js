@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './loadingSpinner.css';
 
 function LoadingSpinner({style}) {
   return (

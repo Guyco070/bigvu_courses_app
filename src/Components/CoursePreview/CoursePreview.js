@@ -8,6 +8,7 @@ import sideImage4 from '../../assets/icons/preview_side_image4.svg';
 import sideImage5 from '../../assets/icons/preview_side_image5.svg';
 import { useNavigate } from "react-router-dom";
 import medal_icon from '../../assets/icons/medal_icon.svg';
+import './coursePreview.css';
 
 const colors = {
   0: ['linear-gradient(270deg, #28B3F7 0.65%, #506AFF 99.35%)', sideImage1],
@@ -36,18 +37,20 @@ function CoursePreview({course, index, isCompleted}) {
           <div className="course_preview_box_header">
             <VideoAmountBox amount={course.chapters.length}/>
             { isCompleted && <div className='complited_container'>
-                <img className="medal_icon" src={medal_icon} alt='medal_icon'/>
-                <label className='watched_text'>Completed</label>
+                <img src={medal_icon} alt='medal_icon'/>
+                <label className='commpleted_text'>Completed</label>
             </div> }
           </div>
-          <div className='course_description_preview'>{course.description}</div>
-          <img className="preview_side_image" src={color[1]} alt='sideImage'/>
-          <div>
-            <SummaryGrid summary={course.summary} color={color[0]}/>
+          <div className="preview_bottom_container">
+            <img className="preview_side_image" src={color[1]} alt='sideImage'/>
             <div  className="preview_button" onClick={() => navigate('/course',  {state: course})}>
               <div className="preview_button_elipse"/>
               <img className="button_arrow" src={buttonArrow} alt='button_arrow'/>
             </div>
+          </div>
+          <div className="preview_body_container">
+            <div className='course_description_preview'>{course.description}</div>
+            <SummaryGrid summary={course.summary} color={color[0]}/>
           </div>
         </div>
     </div>

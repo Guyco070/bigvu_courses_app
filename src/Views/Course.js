@@ -1,9 +1,10 @@
 import medal_icon from '../assets/icons/medal_icon.svg';
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import VideoPlayerView from '../components/CourseView/VideoPlayerView';
-import LoadingSpinner from '../components/LoadingSpinner';
-import ChapterView from '../components/CourseView/ChapterView';
+import VideoPlayerView from '../components/courseView/VideoPlayerView';
+import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner';
+import ChapterView from '../components/courseView/ChapterView';
+import './course.css';
 
 function Course() {
     const location = useLocation();

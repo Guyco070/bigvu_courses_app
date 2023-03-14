@@ -1,3 +1,5 @@
+import './coursePreview.css'
+
 function SummaryGrid({summary, color}) {
   const getSummary = () => {
     return (
