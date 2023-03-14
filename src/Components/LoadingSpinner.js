@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-function LoadingSpinner({course}) {
+function LoadingSpinner({style}) {
   return (
-    <div className='loading-spinner'>
-      
-    </div>
+    <div className='loading-spinner' style={style}/>
   );
 }
 

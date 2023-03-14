@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import getAllCourses from '../api';
-import Course from '../Components/Course';
+import getAllCourses from '../ApiServices';
+import Course from '../Components/CoursePreview/CoursePreview';
 import LoadingSpinner from '../Components/LoadingSpinner';
 
 function Courses() {
   const [courses, setCurses] = useState({
     isLoading: false,
     data: null,
+    isFinished: null,
     error: false,
   });
+  const [isCompleted, setIsCompleted] = useState({}); // { chapterIndex: {currentTimeInSec, isFinished, isEnded}} *isEnded - all the video isCompleted
 
   let content = null;
 
@@ -18,6 +20,20 @@ function Courses() {
     });
     getAllCourses(setCurses);
   }, [])
+
+  useEffect(() => {
+    if(courses.data){
+      courses?.data.map((course) => {
+        let tempWatched = localStorage.getItem(course.id);
+        if(tempWatched != null) {
+            tempWatched = JSON.parse(tempWatched)
+            isCompleted[course.id] = tempWatched['isCourseFinished'] ?? false
+        }
+        else setIsCompleted({})
+      })
+      setIsCompleted({...isCompleted})
+    }
+  }, [courses.data])
 
   if(courses.isLoading){
     content = <LoadingSpinner />;
@@ -30,19 +46,21 @@ function Courses() {
   }
 
   if(courses.data){
-    content = (<ul className='grid'>
-        {courses.data.map((course) => <Course course={course} key={course.id}/>)}
+    content = (<ul className='priview_grid'>
+        {courses.data.map((course, i) => <Course course={course} key={course.id} index={i} isCompleted={isCompleted[course.id]}/>)}
       </ul>);
   }
 
   return (
     <div>
-      <h1>BIGVU 101 Crash Course</h1>
-      <h3>
-        Zero editing experience to pro — your journey starts here. Watch step-by-step video lessons how to make videos with impact.
-      </h3>
-      {content}
-      <button onClick={getAllCourses}>print</button>
+      <div className='courses_page_title'>BIGVU 101 Crash Course</div>
+      <div className='courses_page_sub_title'>
+        Zero editing experience to pro — your journey starts here.<br/>
+        Watch step-by-step video lessons how to make videos with impact.
+      </div>
+      <div className='courses_container'>
+        {content}
+      </div>
     </div>
   );
 }
