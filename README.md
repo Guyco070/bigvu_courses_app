@@ -8,7 +8,7 @@ It is also possible to set notifications for additional reminders, for example, 
 ### Technologies:
 
 <div>
-  <img alt="ReactJS" src="https://img.shields.io/badge/React.js-00579c?style=for-the-badge&logo=react&logoColor=white" />
+  <img alt="ReactJS" src="https://img.shields.io/badge/React.js-61dbfb?style=for-the-badge&logo=react&logoColor=white" />
 </div>
 
 ### Programming Languages:
