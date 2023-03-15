@@ -5,8 +5,8 @@ import {
   // Navigate,
   Routes
 } from 'react-router-dom'
-import Courses from './views/Courses';
-import Course from './views/Course';
+import Courses from './views/CoursesView';
+import Course from './views/CourseView';
 
 
 function App() {

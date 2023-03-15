@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import getAllCourses from '../ApiServices';
 import CoursePreview from '../components/coursePreview/CoursePreview';
 import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner';
-import './courses.css';
+import './coursesView.css';
 
 function Courses() {
   const [courses, setCurses] = useState({

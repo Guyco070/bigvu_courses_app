@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import medal_icon from '../../assets/icons/medal_icon.svg';
 import './coursePreview.css';
 
-const colors = {
+const colors = { 
   0: ['linear-gradient(270deg, #28B3F7 0.65%, #506AFF 99.35%)', sideImage1],
   1: ['linear-gradient(90deg, #00EA3B 0%, #00D096 100%)', sideImage2],
   2: ['linear-gradient(270deg, #F79F28 0.65%, #FF5350 99.35%)', sideImage3],

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import VideoPlayerView from '../components/courseView/VideoPlayerView';
 import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner';
 import ChapterView from '../components/courseView/ChapterView';
-import './course.css';
+import './courseView.css';
 
 function Course() {
     const location = useLocation();
