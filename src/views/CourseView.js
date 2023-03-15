@@ -13,6 +13,7 @@ function CourseView() {
     const [nowWatching, setNowWatching] = useState({ index: 0, currentTime: 0, isClicked: false});
     const [isLoaded, setIsLoaded] = useState(false)
     const screenHeight = window.screen.availHeight;
+    const screenWidth = window.screen.availWidth;
 
     // geting the chapters that already watched data from local storage and update whatched data
     useEffect(() => {
@@ -75,12 +76,11 @@ function CourseView() {
         for(let i in (tempWatched ?? watched)) if((tempWatched ?? watched)[i].isFinished) fininishedLength++;
         return fininishedLength;
     }
-
     return (
         <div>
             {watched == null ? 
             <LoadingSpinner style={{marginLeft: '25%', marginTop: '15%'}}/> :
-            <div className='course_view_container' style={{marginTop: screenHeight/3}}>
+            <div className='course_view_container' style={{marginTop: screenWidth > 1071 ? `${screenHeight/3}px` : '44px'}}>
                 <VideoPlayerView 
                     chapter = {
                         {...nowWatching, 
@@ -91,7 +91,6 @@ function CourseView() {
                     }}
                     updateWatchedAtLoclStorage = {updateWatchedAtLoclStorage}
                     playChapter = {playChapter}
-                    courseFinished = {watched['isCourseFinished']}
                 />
                 <div className='course_side_container'>
                     <div className="headline_container">

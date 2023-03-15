@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player'
 import { FaPlay } from 'react-icons/fa';
 
-function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
+function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter,}) {
     const playerRef = useRef();
     const [isPlayingIcon, setWithPlayingIcon] = useState(false);
     const screenHeight = window.screen.availHeight;
-    const screenWidth = window.screen.availWeight;
+    const screenWidth = window.screen.availWidth;
 
     useEffect(()=>{setWithPlayingIcon(false);},[chapter.index])
 
@@ -40,17 +40,21 @@ function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
       if(!chapter.isEnded)
         playerRef.current.seekTo(parseFloat(chapter.currentTime)) // will play the chapter from the last playing position
     }
+    console.log(screenWidth)
 
     return (
       <div className='video_player_container'>
         { isPlayingIcon && 
-        <div className='video_player_play_container' onClick={() => {setWithPlayingIcon(false);}} style={{top: screenHeight/2}}>
+        <div className='video_player_play_container' onClick={() => {setWithPlayingIcon(false);}} style={{top: screenWidth > 1071 ? `${screenHeight/2}px` : screenHeight/(5.5)}}>
           <FaPlay className="video_player_icon" />
         </div>}
           <ReactPlayer
             ref={playerRef}
+            className={'video_player'}
             controls = {!isPlayingIcon}
             url={chapter.asset.resource.stream.url}
+            width={'100%'}
+            height={'100%'}
             onProgress = {onProgress}
             onEnded = {onEnded}
             onStart = {onStart}
