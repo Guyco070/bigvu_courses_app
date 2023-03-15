@@ -47,8 +47,6 @@ function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
         </div>}
           <ReactPlayer
             ref={playerRef}
-            width={'883px'}
-            height={'496px'}
             controls = {!isPlayingIcon}
             url={chapter.asset.resource.stream.url}
             onProgress = {onProgress}

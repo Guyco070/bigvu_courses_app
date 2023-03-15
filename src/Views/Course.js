@@ -12,6 +12,7 @@ function Course() {
     const [watched, setWatched] = useState(null); // { chapterIndex: {currentTimeInSec, isFinished, isEnded}} *isEnded - all the video watched
     const [nowWatching, setNowWatching] = useState({ index: 0, currentTime: 0, isClicked: false});
     const [isLoaded, setIsLoaded] = useState(false)
+    const screenHeight = window.screen.availHeight;
 
     useEffect(() => {
         let tempWatched = localStorage.getItem(course.id);
@@ -69,7 +70,7 @@ function Course() {
         <div>
             {watched == null ? 
             <LoadingSpinner style={{marginLeft: '25%', marginTop: '15%'}}/> :
-            <>
+            <div className='course_view_container' style={{marginTop: screenHeight/3}}>
                 <VideoPlayerView 
                     chapter = {
                         {...nowWatching, 
@@ -82,27 +83,29 @@ function Course() {
                     playChapter = {playChapter}
                     courseFinished = {watched['isCourseFinished']}
                 />
-                <div className="headline_container">
-                    <div className='course_headline_text'>{course.headline}</div>
-                    <div className='watched_container'>
-                        <img className="medal_icon" src={medal_icon} alt='medal_icon'/>
-                        <label className='watched_text'>{watched['finishedAmount']}/{course.chapters.length}</label>
+                <div className='course_side_container'>
+                    <div className="headline_container">
+                        <div className='course_headline_text'>{course.headline}</div>
+                        <div className='watched_container'>
+                            <img className="medal_icon" src={medal_icon} alt='medal_icon'/>
+                            <label className='watched_text'>{watched['finishedAmount']}/{course.chapters.length}</label>
+                        </div>
+                    </div>
+                    <div className='chapters_container'>
+                        {
+                        course.chapters.map((chapter, i) => 
+                            <ChapterView
+                                key = {chapter.id} 
+                                number = {i + 1} 
+                                title = {chapter.title} 
+                                duration = {chapter.asset.resource.duration} 
+                                isNowWatching = {i  == nowWatching.index} 
+                                setNowWatching = {setNowWatching}
+                                isWatched = {watched[i] && watched[i].isFinished}/>
+                        )}
                     </div>
                 </div>
-                <div className='chapters_container'>
-                    {
-                    course.chapters.map((chapter, i) => 
-                         <ChapterView
-                            key = {chapter.id} 
-                            number = {i + 1} 
-                            title = {chapter.title} 
-                            duration = {chapter.asset.resource.duration} 
-                            isNowWatching = {i  == nowWatching.index} 
-                            setNowWatching = {setNowWatching}
-                            isWatched = {watched[i] && watched[i].isFinished}/>
-                    )}
-                </div>
-            </>}
+            </div>}
         </div>
     );
 }

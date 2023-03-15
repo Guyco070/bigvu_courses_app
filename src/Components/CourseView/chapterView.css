@@ -1,0 +1,141 @@
+.chapter_item {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    user-select: none;
+}
+
+.check_icon {
+    margin-left: 6px;
+    margin-right: 10px;
+}
+
+.play_icon_container {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+
+    margin-left: 6px;
+    margin-right: 10px;
+
+    /* BlueBlack/100*/
+    border: 1.5px solid #253658;
+    border-radius: 100%;
+
+    align-items: center;
+
+    user-select: none;
+}
+
+.play_icon{
+    box-sizing: border-box;
+
+    position: relative;
+    width: 12px;
+    height: 12px;
+    top: -0.5px;
+    left: 4px;
+
+    border-radius: 1px;
+}
+  
+.text_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+}
+
+.chapter_title_text {
+    width: 360px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+
+    font-feature-settings: 'calt' off;
+
+    /* BlueBlack/100 */
+    color: #253658;
+}
+
+.doration {
+    width: 31px;
+    height: 20px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+
+    font-feature-settings: 'calt' off;
+
+    /* BlueBlack/100 */
+
+    color: #253658;
+}
+
+@media only screen and (max-width: 550px) {
+    .text_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 0px;
+    }
+    
+    .chapter_title_text {
+        width: 350px;
+
+        font-size: 12px;
+        line-height: 140%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .text_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 0px;
+    }
+    
+    .chapter_title_text {
+        max-width: 260px;
+
+        font-size: 12px;
+        line-height: 140%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .text_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 0px;
+    }
+    
+    .chapter_title_text {
+        max-width: 220px;
+
+        font-size: 12px;
+        line-height: 140%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .text_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 0px;
+    }
+    
+    .chapter_title_text {
+        max-width: 220px;
+
+        font-size: 12px;
+        line-height: 140%;
+    }
+}

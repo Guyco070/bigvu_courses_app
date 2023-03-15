@@ -1,32 +1,37 @@
+.course_view_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.course_side_container {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 29px;
+}
 
 .headline_container{
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
-  gap: 16px;
-
-  position: absolute;
-  height: 32px;
-  left: 932px;
-  top: 172px;
+  
+  margin-bottom: 27.5px;
 }
 
 .course_headline_text {
   height: 29px;
 
+  margin-right: 16px;
+
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
-  /* identical to box height */
-  
+    
   /* BlueBlack/100 */
-
   color: #253658;
 
-
   /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -36,51 +41,36 @@
   /* Rectangle 909 */
   display: flex;
   flex-direction: row;
-  align-items: center;
-  
-  position: relative;
+  justify-content: space-around;
   width: 66px;
   height: 32px;
-  left: 0px;
-  top: 0px;
+  flex-wrap: wrap;
+  align-items: center;
 
-  /* Blue/8
-
-  #00ABFE
-  */
+  /* Blue/8 */
   background: rgba(0, 171, 254, 0.08);
   border-radius: 40px;
 }
 
 .medal_icon {
   position: relative;
-  left: 20.83%;
-  right: 20.83%;
-  top: 0%;
-  bottom: 8.33%;
+  left: 10%;
 }
 
 .watched_text {
-  position: relative;
-
   width: 24px;
   height: 20px;
-  left: 18px;
 
   font-weight: 500;
   font-size: 14px;
   line-height: 140%;
-  /* identical to box height, or 20px */
 
   font-feature-settings: 'calt' off;
 
   /* BlueBlack/100 */
-
   color: #253658;
 
-
   /* Inside auto layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -88,125 +78,29 @@
 
 .chapters_container {
   box-sizing: border-box;
-
-  position: absolute;
-  width: 493px;
-  height: 260px;
-  left: 932px;
-  top: 230px;
-
   background: #FFFFFF;
-  /* DeadBlue/60
 
-  #7B8DB1
-  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 9px;
+  padding-right: 6px;
+
+  /* DeadBlue/60 */
   border: 1px solid rgba(123, 141, 177, 0.6);
   border-radius: 10px;
 }
 
-.chapter_item {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 491px;
-  height: 33px;
-  left: 1px;
-  top: 13px;
-
-  user-select: none;
-}
-
-.play_icon_container {
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 16px;
-  top: 6.5px;
-
-  /* BlueBlack/100*/
-  border: 1.5px solid #253658;
-  border-radius: 100%;
-
-  align-items: center;
-
-  user-select: none;
-}
-
-.play_icon{
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 3px;
-  left: 3.5px;
-
-  border-radius: 1px;
-}
-
-.check_icon {
-  position: absolute;
-  left: 16px;
-  top: 9px;
-}
-
-.chapter_title_text {
-  height: 20px;
-  width: 360px;
-
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 140%;
-  /* identical to box height, or 20px */
-
-  font-feature-settings: 'calt' off;
-
-  /* BlueBlack/100 */
-
-  color: #253658;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin-left: 45px;
-  margin-top: 6.5px;
-}
-
-.doration {
-  width: 31px;
-  height: 20px;
-
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  /* identical to box height, or 20px */
-
-  text-align: right;
-  font-feature-settings: 'calt' off;
-
-  /* BlueBlack/100 */
-
-  color: #253658;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
 .video_player_container {
   box-sizing: border-box;
-
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* position: absolute;
   width: 883px;
   height: 496px;
   left: 20px;
-  top: 172px;
+  top: 172px; */
 
   overflow: hidden;
 
@@ -215,13 +109,16 @@
   border-radius: 10px;
 }
 
+.video_player {
+  display: flex;
+}
+
 .video_player_play_container {
   position: absolute;
   width: 120px;
   height: 120px;
-  left: 370px;
-  top: 170px;
-  
+  top: 340px;
+  align-self: center;
 
   /* Black/60 */
   background: rgba(0, 0, 0, 0.6);
@@ -243,6 +140,43 @@
   border-radius: 2px;
 }
 
-@media only screen and (max-width: 550px) {
 
+@media only screen and (max-width: 550px) {
+  .course_view_container {
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .course_side_container {
+    margin-left: 0px;
+  }
+  
+  .headline_container{
+    align-self: center;
+    margin-top: 21px;
+    margin-bottom: 22px;
+  }
+  
+  .course_headline_text {
+    height: 24px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .video_player_play_container {
+    width: 80px;
+    height: 80px;
+    top: 150px;
+  }
+  
+  .video_player_icon {
+    width: 32px;
+    height: 32px;
+    left: 28px;
+    top: 26px;
+  }
 }
+
+
