@@ -14,7 +14,7 @@ It is also possible to set notifications for additional reminders, for example, 
 ### Programming Languages:
 
 <div>
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-00579c?style=for-the-badge&logo=JavaScript&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=JavaScript&logoColor=white" />
 </div>
 
 ---
