@@ -2,13 +2,13 @@
 
 ---
 
-### Technologies:
+### Technologie:
 
 <div>
   <img alt="ReactJS" src="https://img.shields.io/badge/React.js-61dbfb?style=for-the-badge&logo=react&logoColor=white" />
 </div>
 
-### Programming Languages:
+### Programming Language:
 
 <div>
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=JavaScript&logoColor=white" />
