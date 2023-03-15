@@ -6,7 +6,7 @@ function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
     const playerRef = useRef();
     const [isPlayingIcon, setWithPlayingIcon] = useState(false);
 
-    useEffect(()=>{setWithPlayingIcon(false); console.log(chapter)},[chapter.index])
+    useEffect(()=>{setWithPlayingIcon(false);},[chapter.index])
 
     const onProgress = (data) => {
       if(data.playedSeconds != '0' && data.playedSeconds != chapter.asset.resource.duration) {

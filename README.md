@@ -31,4 +31,4 @@ It is also possible to set notifications for additional reminders, for example, 
 
 ## To run the app, clone the repository and run the command
 
-### nmp start
+### #nmp start
