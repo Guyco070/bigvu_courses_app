@@ -21,14 +21,14 @@ It is also possible to set notifications for additional reminders, for example, 
 
 ## In the app you will find:
 
-#### • Using two different APIs of BIGVU.
+### • Using two different APIs of BIGVU.
 
-#### • Display of a list of BIGVU courses.
+### • Display of a list of BIGVU courses.
 
-#### • Video player that stream BIGVU courses chapters.
+### • Video player that stream BIGVU courses chapters.
 
-#### • A responsive designe.
+### • A responsive designe.
 
-### To run the app, clone the repository and run the command
+## To run the app, clone the repository and run the command
 
-#### nmp start
+### nmp start
