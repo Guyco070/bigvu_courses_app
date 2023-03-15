@@ -1,4 +1,4 @@
-# BIGVU courses web app :camera: :video:
+# BIGVU courses web app :camera:
 
 ---
 
