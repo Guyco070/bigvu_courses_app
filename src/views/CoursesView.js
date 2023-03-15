@@ -4,7 +4,7 @@ import CoursePreview from '../components/coursePreview/CoursePreview';
 import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner';
 import './coursesView.css';
 
-function Courses() {
+function CoursesView() {
   const [courses, setCurses] = useState({
     isLoading: false,
     data: null,
@@ -36,25 +36,25 @@ function Courses() {
     }
   }, [courses.data])
 
-  if(courses.isLoading){
+  if(courses.isLoading){ // while fetching isn't finished spinner will be displayed
     content = <LoadingSpinner />;
   }
 
-  if(courses.error){
+  if(courses.error){ // error handling
     content = (<p>
         Sorry, there was an error. please refresh or try again later.
       </p>);
   }
 
-  if(courses.data){
-    content = (<ul className='priview_grid'>
-        {courses.data.map((course, i) => <CoursePreview course={course} key={course.id} index={i} isCompleted={isCompleted[course.id]}/>)}
+  if(courses.data){ // after the courses data is loaded a courses preview grid will display
+    content = (<ul className='priview_grid'> 
+        {courses.data.map((course, i) => <CoursePreview course={course} key={course.id} index={i} isCompleted={isCompleted[course.id]}/>)} 
       </ul>);
   }
 
   return (
     <div className='courses_page'>
-      <div className='courses_page_title'>BIGVU 101 Crash Course</div>
+      <div className='courses_page_title'> BIGVU 101 Crash Course </div>
       <div className='courses_page_sub_title'>
         Zero editing experience to pro — your journey starts here.<br/>
         Watch step-by-step video lessons how to make videos with impact.
@@ -66,4 +66,4 @@ function Courses() {
   );
 }
 
-export default Courses;
+export default CoursesView;

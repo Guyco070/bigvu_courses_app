@@ -22,9 +22,9 @@
 
 ### • Display of a list of BIGVU courses.
 
-### • Video player that stream BIGVU courses chapters.
+### • Video player that streams BIGVU course chapters.
 
-### • A responsive designe.
+### • A responsive design.
 
 ## To run the app, clone the repository and run the command
 

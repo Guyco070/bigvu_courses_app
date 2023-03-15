@@ -30,7 +30,7 @@ const getAllCourses = (setCurses) => {
             isLoading: false,
           });
     })
-    .catch((error) => {
+    .catch((error) => { 
         console.log(error)
         setCurses({
             isLoading: false,

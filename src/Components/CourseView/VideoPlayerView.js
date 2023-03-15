@@ -5,12 +5,14 @@ import { FaPlay } from 'react-icons/fa';
 function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
     const playerRef = useRef();
     const [isPlayingIcon, setWithPlayingIcon] = useState(false);
+    const screenHeight = window.screen.availHeight;
+    const screenWidth = window.screen.availWeight;
 
     useEffect(()=>{setWithPlayingIcon(false);},[chapter.index])
 
     const onProgress = (data) => {
       if(data.playedSeconds != '0' && data.playedSeconds != chapter.asset.resource.duration) {
-        const isFinished = parseFloat(data.playedSeconds) >= 10;
+        const isFinished = parseFloat(data.playedSeconds) >= 10; // check if the user watched at least 10 second of the current chapter (to update isFinished)
         updateWatchedAtLoclStorage(
           chapter.index,
           {
@@ -22,7 +24,7 @@ function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
     }
 
     const onEnded = () => {
-      updateWatchedAtLoclStorage(
+      updateWatchedAtLoclStorage( // update chapter that ended (to update isEnded)
         chapter.index,
         {
           currentTimeInSec: 0,
@@ -31,18 +33,18 @@ function VideoPlayerView({chapter, updateWatchedAtLoclStorage, playChapter}) {
         }
       )
       setWithPlayingIcon(false)
-      playChapter(chapter.index + 1)
+      playChapter(chapter.index + 1) // try to play the next chapter
     }
 
     const onStart = () => {
       if(!chapter.isEnded)
-        playerRef.current.seekTo(parseFloat(chapter.currentTime))
+        playerRef.current.seekTo(parseFloat(chapter.currentTime)) // will play the chapter from the last playing position
     }
 
     return (
       <div className='video_player_container'>
         { isPlayingIcon && 
-        <div className='video_player_play_container' onClick={() => {setWithPlayingIcon(false);}}>
+        <div className='video_player_play_container' onClick={() => {setWithPlayingIcon(false);}} style={{top: screenHeight/2}}>
           <FaPlay className="video_player_icon" />
         </div>}
           <ReactPlayer
